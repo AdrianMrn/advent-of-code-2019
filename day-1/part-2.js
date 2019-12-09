@@ -100,24 +100,21 @@ var input = `143843
 73447`;
 
 function calculateRequiredFuel(mass) {
-  return Math.floor(parseInt(mass) / 3) - 2;
+    return Math.floor(parseInt(mass) / 3) - 2;
 }
 
 function calculateFuelRequiredWithExtraFuel(mass) {
-  let required = calculateRequiredFuel(mass);
+    let required = calculateRequiredFuel(mass);
 
-  if (calculateRequiredFuel(required) <= 0) {
-    return required + 0;
-  }
+    if (calculateRequiredFuel(required) <= 0) {
+        return required + 0;
+    }
 
-  return required + calculateFuelRequiredWithExtraFuel(required);
+    return required + calculateFuelRequiredWithExtraFuel(required);
 }
 
 const fuelRequired = input
-  .split("\n")
-  .reduce(
-    (total, curr) => (curr ? total + calculateFuelRequiredWithExtraFuel(curr) : total),
-    0
-  );
+    .split('\n')
+    .reduce((total, curr) => (curr ? total + calculateFuelRequiredWithExtraFuel(curr) : total), 0);
 
 console.log(fuelRequired);

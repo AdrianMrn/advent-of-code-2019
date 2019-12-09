@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "scripts": {
+    "watch": "tsc --w"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AdrianMrn/advent-of-code-2019.git"
